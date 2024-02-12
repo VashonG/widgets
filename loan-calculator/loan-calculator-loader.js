@@ -1,5 +1,5 @@
 // Select the container div
-const container = document.getElementById('content-container');
+const container = document.getElementById('vashon-gonzales-loan-calculator');
 
 // Fetch the HTML content from your codebase
 fetch('https://vashong.github.io/widgets/loan-calculator/dist/')
