@@ -30,15 +30,47 @@
         `;
     }
 
-    // Function to include the script dynamically with the specified webhook URL
-    function includeScript(webhookUrl) {
-        const scriptElement = document.createElement("script");
-        scriptElement.src = "https://vashong.github.io/widgets/perks/script.js";
-        
-        // Pass the webhook URL as a query parameter to the script
-        scriptElement.setAttribute("data-webhook-url", webhookUrl);
-        
-        document.body.appendChild(scriptElement);
+    // Function to send webhook data to the specified endpoint
+    function sendWebhook() {
+        // Retrieve form data
+        const firstName = document.getElementById("firstName").value;
+        const email = document.getElementById("email").value;
+        const perk = document.getElementById("perk").value;
+
+        // Construct the payload to be sent to the webhook endpoint
+        const payload = {
+            firstName: firstName,
+            email: email,
+            perk: perk
+        };
+
+        // Your actual webhook endpoint URL
+        const webhookUrl = "https://hooks.zapier.com/hooks/catch/17853361/3ljjh18/";
+
+        // Send the webhook request using fetch
+        fetch(webhookUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to send webhook");
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Handle success response from webhook
+            console.log("Webhook sent successfully:", data);
+            // Display success message
+            document.getElementById("successMessage").style.display = "block";
+        })
+        .catch(error => {
+            // Handle errors
+            console.error("Error sending webhook:", error.message);
+        });
     }
 
     // Execute these functions when the DOM is ready
@@ -46,9 +78,6 @@
         // Create the form inside a specific container
         const container = document.getElementById("formContainer");
         createForm(container);
-
-        // Include the script dynamically with the specified webhook URL
-        includeScript("https://hooks.zapier.com/hooks/catch/17853361/3ljjh18/");
     });
 </script>
 
