@@ -1,0 +1,17 @@
+.calculator {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    border: 2px solid black; /* Add a black outline */
+    padding: 20px;
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.slider-container {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    margin-top: 5px;
+}
