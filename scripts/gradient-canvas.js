@@ -1,5 +1,4 @@
-<script>
-  
+
     /*
     *   Spe WebGl Gradient Animation
     *   ScrollObserver functionality to disable animation when not scrolled into view has been disabled and 
@@ -519,4 +518,3 @@
     */
     var gradient = new Gradient();
     gradient.initGradient("#gradient-canvas");
-</script>
