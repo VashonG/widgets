@@ -1,9 +1,9 @@
 #gradient-canvas {
   width: 1740px;
   height: 325px;
-  --gradient-color-1: #FFF75A;
-  --gradient-color-2: #023D61;
-  --gradient-color-3: #006FFF;
-  --gradient-color-4: #163A60;
+  --gradient-color-1: #ffe164;
+  --gradient-color-2: #0a32dd;
+  --gradient-color-3: #75f8cb;
+  --gradient-color-4: #7f91f3;
   z-index: 0;
 }
