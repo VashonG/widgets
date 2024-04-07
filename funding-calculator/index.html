@@ -1,0 +1,51 @@
+<style>
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+    <title>Funding Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Funding Calculator</h1>
+        <div>
+            <label for="mrr">Monthly Recurring Revenue (MRR) in dollars:</label>
+            <input type="number" id="mrr" required>
+        </div>
+        <div>
+            <label for="credit-score">Credit Score:</label>
+            <input type="number" id="credit-score" required>
+        </div>
+        <button onclick="calculateFunding()">Calculate Funding</button>
+        <p id="result"></p>
+    </div>
