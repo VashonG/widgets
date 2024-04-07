@@ -1,4 +1,4 @@
-  function formatCurrency(number) {
+function formatCurrency(number) {
     return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
@@ -53,6 +53,10 @@ function calculateFunding() {
         resultText += "<tr><td>" + schedule[i].year + "</td><td>" + formatCurrency(schedule[i].payment) + "</td><td>" + formatCurrency(schedule[i].principal) + "</td><td>" + formatCurrency(schedule[i].interest) + "</td><td>" + formatCurrency(schedule[i].balance) + "</td></tr>";
     }
     resultText += "</table>";
+
+    // If approved, display accept offer button
+    resultText += '<button onclick="redirectToApply()">Accept Offer</button>';
+
     document.getElementById('result').innerHTML = resultText;
 }
 
@@ -99,4 +103,8 @@ function calculateAmortizationSchedule(totalFunding, monthlyInterestRate, loanTe
 function calculateMonthlyPayment(remainingBalance, monthlyInterestRate, numberOfPayments) {
     var monthlyPayment = remainingBalance * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
     return monthlyPayment;
+}
+
+function redirectToApply() {
+    window.location.href = 'https://paygeon.com/apply';
 }
