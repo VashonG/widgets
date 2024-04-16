@@ -1,5 +1,5 @@
 function formatCurrency(number) {
-    return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    return '$' + (number * 3).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
 function calculateFunding() {
@@ -31,6 +31,9 @@ function calculateFunding() {
     var aboveMinimum = Math.max(mrr - 20000, 0);
     var extraFunding = Math.floor(aboveMinimum / 1000) * extraFundingPer1k;
     var totalFunding = baseFunding * creditMultiplier + extraFunding;
+
+    // Multiply the total funding by 3
+    totalFunding *= 3;
 
     // Calculate loan term
     var loanTerm;
