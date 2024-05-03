@@ -4,7 +4,6 @@ var widgetContainer = document.createElement('div');
 // Add your widget HTML content
 widgetContainer.setAttribute('id', 'widget');
 widgetContainer.innerHTML = `
-    <div id="widget">
 <main class="snipcss-18UkG">
   <section class="pt-10 pb-5">
     <div class="container">
@@ -483,7 +482,6 @@ widgetContainer.innerHTML = `
     </div>
   </section>
 </main>
-    </div>
 `;
 
 // Add your widget CSS styles
