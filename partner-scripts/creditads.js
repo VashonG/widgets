@@ -2,6 +2,7 @@
 var widgetContainer = document.createElement('div');
 
 // Add your widget HTML content
+widgetContainer.setAttribute('id', 'widget');
 widgetContainer.innerHTML = `
     <div id="widget">
 <main class="snipcss-18UkG">
