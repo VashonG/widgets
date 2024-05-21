@@ -3,41 +3,31 @@
     function createWidget(params) {
         // Create the container div
         var container = document.createElement('div');
-        container.className = 'award-widget';
+        container.className = 'BusinessCenturionRubyAward1';
 
-        // Create the content div
-        var content = document.createElement('div');
-        content.className = 'award-content';
+        // Create the MaskGroup div
+        var maskGroup = document.createElement('div');
+        maskGroup.className = 'MaskGroup';
 
-        // Create and append the certificate title
-        var title = document.createElement('h2');
-        title.innerText = 'Certificate of Achievement';
-        content.appendChild(title);
+        // Create the ClipPathGroup div
+        var clipPathGroup = document.createElement('div');
+        clipPathGroup.className = 'ClipPathGroup';
+        maskGroup.appendChild(clipPathGroup);
 
-        // Create and append the presentation text
-        var presentedTo = document.createElement('p');
-        presentedTo.innerText = 'This award is presented to';
-        content.appendChild(presentedTo);
+        // Create the BusinessCenturion div
+        var businessCenturion = document.createElement('div');
+        businessCenturion.className = 'BusinessCenturion';
+        businessCenturion.innerHTML = 'Business<br/>Centurion';
 
-        // Create and append the recipient's name
-        var recipientName = document.createElement('h3');
-        recipientName.id = 'recipient-name';
-        recipientName.innerText = params.name;
-        content.appendChild(recipientName);
+        // Create the RubyAward div
+        var rubyAward = document.createElement('div');
+        rubyAward.className = 'RubyAward';
+        rubyAward.innerText = 'RUBY AWARD';
 
-        // Create and append the issue date text
-        var issuedOn = document.createElement('p');
-        issuedOn.innerText = 'Issued on';
-        content.appendChild(issuedOn);
-
-        // Create and append the issue date
-        var issueDate = document.createElement('h4');
-        issueDate.id = 'issue-date';
-        issueDate.innerText = params.date;
-        content.appendChild(issueDate);
-
-        // Append the content to the container
-        container.appendChild(content);
+        // Append elements to the container
+        container.appendChild(maskGroup);
+        container.appendChild(businessCenturion);
+        container.appendChild(rubyAward);
 
         // Append the container to the body
         document.body.appendChild(container);
@@ -56,31 +46,54 @@
     // Function to inject styles
     function injectStyles() {
         var styles = `
-            .award-widget {
-                width: 300px;
-                padding: 20px;
-                border: 2px solid #000;
-                text-align: center;
-                font-family: Arial, sans-serif;
-                background-color: #f9f9f9;
-                margin: 20px auto;
-            }
+.BusinessCenturionRubyAward1 {
+  width: 24rem; /* 96 * 4 = 384px */
+  height: 24rem; /* 96 * 4 = 384px */
+  position: relative;
+}
 
-            .award-widget .award-content h2 {
-                font-size: 1.5em;
-                margin-bottom: 10px;
-            }
+.MaskGroup {
+  width: 24rem; /* 96 * 4 = 384px */
+  height: 24rem; /* 96 * 4 = 384px */
+  position: absolute;
+  left: -27rem; /* -108px */
+  top: -27rem; /* -108px */
+}
 
-            .award-widget .award-content h3 {
-                font-size: 1.2em;
-                margin: 10px 0;
-            }
+.ClipPathGroup {
+  width: 24rem; /* 96 * 4 = 384px */
+  height: 24rem; /* 96 * 4 = 384px */
+  position: absolute;
+  left: 53.6675rem; /* 214.67px */
+  top: 53.6675rem; /* 214.67px */
+}
 
-            .award-widget .award-content h4 {
-                font-size: 1em;
-                margin-top: 5px;
-                color: #555;
-            }
+.BusinessCenturion {
+  width: 24rem; /* 96 * 4 = 384px */
+  height: 12rem; /* 48 * 4 = 192px */
+  position: absolute;
+  left: 47.5rem; /* 190px */
+  top: 160rem; /* 640px */
+  text-align: center;
+  color: #ffbf00; /* amber-400 */
+  font-size: 6rem; /* 8xl */
+  font-weight: bold;
+  font-family: 'Kameron', serif; /* Assuming Kameron is a serif font */
+  line-height: 2.5rem; /* 10 * 0.25 = 2.5 */
+}
+
+.RubyAward {
+  width: 20rem; /* 80 * 4 = 320px */
+  height: 4rem; /* 16 * 4 = 64px */
+  position: absolute;
+  left: 95.75rem; /* 383px */
+  top: 221.25rem; /* 885px */
+  text-align: center;
+  color: #ffbf00; /* amber-400 */
+  font-size: 1.875rem; /* 3xl */
+  font-weight: bold;
+  font-family: 'Kameron', serif; /* Assuming Kameron is a serif font */
+}
         `;
         var styleSheet = document.createElement("style");
         styleSheet.type = "text/css";
